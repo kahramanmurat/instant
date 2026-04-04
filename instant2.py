@@ -107,6 +107,15 @@ BASE_PROMPTS = {
     ContentType.facts:        "Share surprising little-known facts about the history of the internet or web development.",
     ContentType.motivational: "Write a motivational message for a developer who just shipped their first production deployment.",
 }
+
+TOPIC_PROMPTS = {
+    ContentType.welcome:      "Write a warm, engaging welcome message about {topic}.",
+    ContentType.poem:         "Write a poem about {topic}.",
+    ContentType.haiku:        "Write a haiku (5-7-5) about {topic}. Output only the haiku.",
+    ContentType.joke:         "Tell a clever, clean joke about {topic}. Output only the joke.",
+    ContentType.facts:        "Share surprising little-known facts about {topic}.",
+    ContentType.motivational: "Write a motivational message about {topic}.",
+}
 LENGTH_INSTRUCTIONS = {
     Length.short:  "Be very brief — 1 to 2 sentences or lines maximum.",
     Length.medium: "Keep it moderate — a short paragraph or 4–6 lines.",
@@ -123,9 +132,10 @@ TONE_INSTRUCTIONS = {
 
 
 def build_prompt(content_type, tone, length, language, topic, audience) -> str:
-    base = BASE_PROMPTS[content_type]
     if topic:
-        base = f"{base} The subject or theme to focus on is: {topic}."
+        base = TOPIC_PROMPTS[content_type].format(topic=topic)
+    else:
+        base = BASE_PROMPTS[content_type]
     parts = [base, TONE_INSTRUCTIONS[tone], LENGTH_INSTRUCTIONS[length]]
     if audience:
         parts.append(f"Tailor the content specifically for this audience: {audience}.")
