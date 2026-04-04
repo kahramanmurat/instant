@@ -11,7 +11,7 @@ Generate welcome messages, poems, haikus, jokes, fun facts, and motivational quo
 - **6 content types:** welcome, poem, haiku, joke, facts, motivational
 - **6 tones:** enthusiastic, professional, sarcastic, pirate, shakespearean, gen_z
 - **3 lengths:** short, medium, long
-- **6 languages:** English, Spanish, French, German, Japanese, Portuguese
+- **7 languages:** English, Spanish, French, German, Japanese, Portuguese, Turkish
 - **5 OpenAI models:** GPT-4o mini, GPT-4o, GPT-4 Turbo, o1, o3-mini
 - **Compare mode:** run all models side-by-side on the same prompt
 - **Custom topic and audience** via free-text inputs
@@ -83,7 +83,7 @@ All controls are URL query parameters, so you can bookmark or share specific con
 | `type`     | `welcome`, `poem`, `haiku`, `joke`, `facts`, `motivational` | `welcome` |
 | `tone`     | `enthusiastic`, `professional`, `sarcastic`, `pirate`, `shakespearean`, `gen_z` | `enthusiastic` |
 | `length`   | `short`, `medium`, `long` | `medium` |
-| `language` | `English`, `Spanish`, `French`, `German`, `Japanese`, `Portuguese` | `English` |
+| `language` | `English`, `Spanish`, `French`, `German`, `Japanese`, `Portuguese`, `Turkish` | `English` |
 | `model`    | `gpt-4o-mini`, `gpt-4o`, `gpt-4-turbo`, `o1`, `o3-mini` | `gpt-4o-mini` |
 | `compare`  | `true`, `false` | `false` |
 | `topic`    | Free text (max 120 chars) | none |

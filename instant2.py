@@ -43,6 +43,7 @@ class Language(str, Enum):
     german     = "German"
     japanese   = "Japanese"
     portuguese = "Portuguese"
+    turkish    = "Turkish"
 
 class Model(str, Enum):
     gpt_4o_mini = "gpt-4o-mini"
