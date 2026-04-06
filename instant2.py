@@ -46,18 +46,18 @@ class Language(str, Enum):
     turkish    = "Turkish"
 
 class Model(str, Enum):
-    gpt_4o_mini = "gpt-4o-mini"
-    gpt_4o      = "gpt-4o"
-    gpt_4_turbo = "gpt-4-turbo"
+    gpt_54_nano = "gpt-5.4-nano"
+    gpt_54_mini = "gpt-5.4-mini"
+    gpt_54      = "gpt-5.4"
     gpt_o1      = "o1"
     gpt_o3_mini = "o3-mini"
 
 MODEL_META = {
-    Model.gpt_4o_mini: {"label": "GPT-4o mini",  "badge": "⚡ Fast & cheap", "color": "#22d3ee", "note": "Best for quick tasks. Low latency, low cost."},
-    Model.gpt_4o:      {"label": "GPT-4o",        "badge": "🌟 Flagship",    "color": "#818cf8", "note": "Multimodal flagship. Strong reasoning and instruction following."},
-    Model.gpt_4_turbo: {"label": "GPT-4 Turbo",   "badge": "🔬 128k ctx",   "color": "#fb923c", "note": "Large context window. Good for long documents."},
+    Model.gpt_54_nano: {"label": "GPT-5.4 nano", "badge": "⚡ Fast & cheap", "color": "#22d3ee", "note": "Fastest and most affordable. Great for quick tasks."},
+    Model.gpt_54_mini: {"label": "GPT-5.4 mini", "badge": "🎯 Balanced",    "color": "#818cf8", "note": "Best balance of speed, quality, and cost."},
+    Model.gpt_54:      {"label": "GPT-5.4",       "badge": "🌟 Flagship",    "color": "#fb923c", "note": "Most capable model. Best reasoning and instruction following."},
     Model.gpt_o1:      {"label": "o1",              "badge": "🧠 Reasoning",  "color": "#34d399", "note": "Full reasoning model. Thinks before it answers."},
-    Model.gpt_o3_mini: {"label": "o3-mini",        "badge": "🚀 Latest",     "color": "#f472b6", "note": "Newest reasoning model. Highest accuracy on hard tasks."},
+    Model.gpt_o3_mini: {"label": "o3-mini",        "badge": "🚀 Reasoning",  "color": "#f472b6", "note": "Compact reasoning model. High accuracy on hard tasks."},
 }
 
 REASONING_MODELS = {Model.gpt_o1, Model.gpt_o3_mini}
@@ -256,7 +256,7 @@ def generate_content(
     tone:     Tone          = Query(default=Tone.enthusiastic,     description="Writing tone"),
     length:   Length        = Query(default=Length.medium,         description="Response length"),
     language: Language      = Query(default=Language.english,      description="Output language"),
-    model:    Model         = Query(default=Model.gpt_4o_mini,     description="OpenAI model to use"),
+    model:    Model         = Query(default=Model.gpt_54_nano,     description="OpenAI model to use"),
     compare:  bool          = Query(default=False,                 description="Run all models side-by-side"),
     topic:    Optional[str] = Query(default=None, max_length=120,  description="Custom topic/subject"),
     audience: Optional[str] = Query(default=None, max_length=120,  description="Target audience"),
